@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Countries - Women’s Education Analytics</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+<header class="topbar">
+<div class="brand"><div class="brand-icon">🎓</div><div><h2>Women's Education Percentage Across Countries</h2><span>Real-Time Data Visualization System</span></div></div>
+<div class="user-area"><a href="/dashboard">Dashboard</a><a href="/logout">⇥ Logout</a></div>
+</header>
+<main class="content standalone">
+<section class="panel">
+<h1>Countries</h1>
+<p>Latest available female literacy percentage for each country.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>#</th><th>Country</th><th>Year</th><th>Female Education %</th><th>Action</th></tr></thead>
+<tbody>
+{% for c in countries %}
+<tr><td>{{ loop.index }}</td><td>{{ c.country }}</td><td>{{ c.year }}</td><td>{{ "%.2f"|format(c.percentage) }}%</td>
+<td><button class="small-btn" onclick="alert('{{ c.country }} — {{ c.percentage }}% ({{ c.year }})')">View Details</button></td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</body>
+</html>

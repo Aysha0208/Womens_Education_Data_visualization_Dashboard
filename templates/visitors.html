@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Visitors</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+<header class="topbar">
+<div class="brand"><div class="brand-icon">🎓</div><div><h2>Women's Education Percentage Across Countries</h2><span>Visitor Activity</span></div></div>
+<div class="user-area"><a href="/dashboard">Dashboard</a><a href="/logout">⇥ Logout</a></div>
+</header>
+<main class="content standalone">
+<section class="panel">
+<h1>Visitors</h1>
+<table><thead><tr><th>Email</th><th>Page</th><th>Visit Time</th></tr></thead>
+<tbody>{% for r in rows %}<tr><td>{{ r[0] }}</td><td>{{ r[1] }}</td><td>{{ r[2] }}</td></tr>{% endfor %}</tbody>
+</table>
+</section>
+</main>
+</body>
+</html>

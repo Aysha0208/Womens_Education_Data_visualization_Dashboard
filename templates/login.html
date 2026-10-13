@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Women’s Education Analytics - Login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+<div class="login-wrap">
+    <div class="login-card">
+        <div class="login-icon">🎓</div>
+        <h1>Women’s Education Analytics</h1>
+        <p>Real-Time Data Visualization System</p>
+        <form method="POST">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter email" required>
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter password" required>
+            <button type="submit">Login</button>
+        </form>
+        {% if error %}<div class="error">{{ error }}</div>{% endif %}
+        <div class="demo">Demo Login: admin@gmail.com / admin123</div>
+    </div>
+</div>
+</body>
+</html>
